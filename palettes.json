@@ -17,7 +17,7 @@
         "primary": "#7739C2",
         "secondary": "#8A75A7",
         "tertiary": "#EFCB68",
-        "error": "#FCE5DC",
+        "error": "#E9C784",
         "neutral": "#000411"
     },
     "office_core": {
@@ -29,7 +29,7 @@
     },
     "bubble_gum": {
         "primary": "#FF8CC6",
-        "secondary": "#A2D7E8",
+        "secondary": "#EAA7C5",
         "tertiary": "#613F75",
         "error": "#EF6F94",
         "neutral": "#EFD6D2"

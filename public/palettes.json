@@ -1,0 +1,37 @@
+{
+    "default": {
+        "primary": "#EDBDDC",
+        "secondary": "#D2BDD1",
+        "tertiary": "#B2DEBB",
+        "error": "#96484D",
+        "neutral": "#34202C"
+    },
+    "ghibli": {
+        "primary": "#59A96A",
+        "secondary": "#9BDEAC",
+        "tertiary": "#B4E7CE",
+        "error": "#FFC09F",
+        "neutral": "#494A3D"
+    },
+    "twilight": {
+        "primary": "#7739C2",
+        "secondary": "#8A75A7",
+        "tertiary": "#EFCB68",
+        "error": "#f5e4ee",
+        "neutral": "#14051f"
+    },
+    "office_core": {
+        "primary": "#BFD7EA",
+        "secondary": "#839788",
+        "tertiary": "#BAA898",
+        "error": "#7E302A",
+        "neutral": "#000000"
+    },
+    "bubble_gum": {
+        "primary": "#F3ACD0",
+        "secondary": "#DD82B9",
+        "tertiary": "#79ADE7",
+        "error": "#A48FCB",
+        "neutral": "#D3E7F0"
+    }
+}

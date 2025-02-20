@@ -77,7 +77,10 @@ export default function Layout({children}) {
     const [customPalettes, setCustomPalettes] = useState({});
     useEffect(() => {
         (async () => {
-            setCustomPalettes(await fetch("./palettes.json").then(response => response.json()));
+            setCustomPalettes(
+                await fetch("https://raw.githubusercontent.com/kalvingarcia/kalvin-portfolio/refs/heads/main/public/palettes.json")
+                .then(response => response.json())
+            );
             setIsClient(true);
         })();
     }, []);

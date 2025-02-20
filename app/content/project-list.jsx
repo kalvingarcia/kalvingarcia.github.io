@@ -76,7 +76,7 @@ const useStyles = tss.create(({theme}) => ({
     }
 }));
 
-export default function ProjectList({}) {
+export default function ProjectList({show}) {
     const [open, setOpen] = useState(false);
     const [markdown, setMarkdown] = useState("");
     const openModal = useCallback(async directory => {
@@ -113,7 +113,7 @@ export default function ProjectList({}) {
 
     const {classes} = useStyles();
     return (isClient &&
-        <Effect start inactive={fadeInactive} begin={fadeIn} active={fadeActive}>
+        <Effect start={show} inactive={fadeInactive} begin={fadeIn} active={fadeActive}>
             <section className={classes.projects}>
                 <div>
                     <Heading className={classes.flavorText}>Everything I've worked on</Heading>
@@ -124,7 +124,7 @@ export default function ProjectList({}) {
                         row.display?
                             <Row key={`row-${index}`}>
                                 <Label>{row.completionDate}</Label>
-                                <Label className={classes.openModal} onClick={() => router.push(`?open=${row.directory}`)}>{row.name} <Icon icon="open_in_new" /></Label>
+                                <Label className={classes.openModal} onClick={() => router.push(`?open=${row.directory}`)}>{row.name}</Label>
                                 <Label>{row.madeFor}</Label>
                                 <div className={classes.technologies}>{row.technologiesUsed.map((tech, index) => <Chip key={tech}>{tech}</Chip>)}</div>
                                 <div className={classes.links}>{Object.entries(row.links).map(([name, link]) => <IconButton key={name} appearance="text" icon={name} iconClass="kalvin-icons" onClick={() => setTimeout(() => window.open(link, "_blank"), 300)} />)}</div>

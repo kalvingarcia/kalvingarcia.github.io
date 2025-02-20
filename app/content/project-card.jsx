@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import {useRouter} from "next/navigation";
 import { tss } from "../source/components/themer";
 import {Body, Subtitle} from "../source/components/typography";
 import {ContainerContextProvider} from "../source/helper/container";
@@ -96,13 +97,14 @@ const useStyles = tss.create(({theme, rippleClass}) => ({
 const ProjectCard = forwardRef(({className, image, heading, body, directory}, ref) => {
     const {rippleClass, rippleExpand, rippleFade} = useRippleEffect();
     const {cx, classes} = useStyles({rippleClass});
+    const router = useRouter();
     return (
         <div 
             ref={ref}
             className={cx(classes.card, className)} 
             onMouseDown={rippleExpand}
             onMouseUp={rippleFade}
-            onClick={() => router.push(`?open=${row.directory}`)}
+            onClick={() => router.push(`?open=${directory}`)}
         >
             <ContainerContextProvider role="secondary" type="container">
                 <figure className={classes.image} onMouseDown={rippleExpand} onMouseUp={rippleFade}>

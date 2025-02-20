@@ -102,7 +102,7 @@ const ProjectCard = forwardRef(({className, image, heading, body, directory}, re
             className={cx(classes.card, className)} 
             onMouseDown={rippleExpand}
             onMouseUp={rippleFade}
-            onClick={() => setTimeout(() => window.location.href = `https://projects.kalvingarcia.com?open=${directory}`, 300)}
+            onClick={() => router.push(`?open=${row.directory}`)}
         >
             <ContainerContextProvider role="secondary" type="container">
                 <figure className={classes.image} onMouseDown={rippleExpand} onMouseUp={rippleFade}>

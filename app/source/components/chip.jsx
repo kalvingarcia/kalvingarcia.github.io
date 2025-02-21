@@ -23,6 +23,8 @@ const useStyles = tss.create(({theme, role, active}) => ({
         fontSize: "0.9rem",
 
         backgroundColor: theme[active? role : "neutral"][active? "container" : "containerHigh"].hex(),
+        transition: "background-color 300ms ease",
+
         "&::after": {
             content: "''",
             width: "100%",
@@ -56,17 +58,11 @@ const useStyles = tss.create(({theme, role, active}) => ({
  *
  * @returns A styled Label component.
  */
-export default function Chip({className, role="primary", activeDefault = false, onClick, children, ...props}) {
-    const [active, setActive] = useState(activeDefault);
-    const clickHandler = useCallback(event => {
-        onClick?.(event);
-        setActive(!active);
-    }, [active]);
-
+export default function Chip({className, role="primary", active = false, onClick, children, ...props}) {
     const {cx, classes} = useStyles({role, active});
     return (
         <ContainerContextProvider role={active? role : "neutral"} type="container">
-            <Label className={cx(classes.chip, className)} onClick={clickHandler} {...props}>
+            <Label className={cx(classes.chip, className)} onClick={onClick} {...props}>
                 {children}
             </Label>
         </ContainerContextProvider>

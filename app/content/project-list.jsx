@@ -81,6 +81,14 @@ const useStyles = tss.create(({theme}) => ({
 }));
 
 export default function ProjectList({show}) {
+    const [highlightedTech, setHighlightedTech] = useState([]);
+    const toggleTech = tech => {
+        if(highlightedTech.includes(tech))
+            setHighlightedTech(highlightedTech.filter(t => t != tech));
+        else
+            setHighlightedTech([...highlightedTech, tech]);
+    }
+
     const [open, setOpen] = useState(false);
     const [markdown, setMarkdown] = useState("");
     const openModal = useCallback(async directory => {
@@ -130,7 +138,7 @@ export default function ProjectList({show}) {
                             <Label>{row.completionDate}</Label>
                             <Label className={classes.openModal} onClick={() => router.push(`?open=${row.directory}`)}>{row.name}</Label>
                             <Label>{row.madeFor}</Label>
-                                <div className={classes.technologies}>{row.technologiesUsed.map((tech, index) => <Chip key={tech}>{tech}</Chip>)}</div>
+                            <div className={classes.technologies}>{row.technologiesUsed.map(tech => <Chip key={tech} active={highlightedTech.includes(tech)} onClick={() => toggleTech(tech)}>{tech}</Chip>)}</div>
                             <div className={classes.links}>{Object.entries(row.links).map(([name, link]) => <IconButton key={name} appearance="text" icon={name} iconClass="kalvin-icons" onClick={() => setTimeout(() => window.open(link, "_blank"), 300)} />)}</div>
                         </Row>
                     ))}

@@ -10,6 +10,7 @@ import Remark from "../source/components/remark";
 import Chip from "../source/components/chip";
 import {Effect} from "../source/components/animation";
 import { useFadeAnimation } from "../source/hooks/fade";
+import useIntersection from "../source/hooks/intersection";
 
 const useStyles = tss.create(({theme}) => ({
     projects: {
@@ -44,6 +45,9 @@ const useStyles = tss.create(({theme}) => ({
     },
     openModal: {
         cursor: "pointer",
+        textDecoration: `${theme.tertiary.accent.hex()} wavy underline`,
+        textDecorationSkipInk: "auto",
+        textUnderlineOffset: "3px",
         "&:hover": {
             color: theme.primary.accent.hex(),
             "& i": {
@@ -111,26 +115,24 @@ export default function ProjectList({show}) {
         })();
     }, []);
 
+    const {isIntersecting, setElement} = useIntersection();
     const {classes} = useStyles();
     return (isClient &&
-        <Effect start={show} inactive={fadeInactive} begin={fadeIn} active={fadeActive}>
-            <section className={classes.projects}>
+        <Effect start={show && isIntersecting} inactive={fadeInactive} begin={fadeIn} active={fadeActive}>
+            <section ref={setElement} className={classes.projects}>
                 <div>
-                    <Heading className={classes.flavorText}>Everything I've worked on</Heading>
+                    <Heading className={classes.flavorText}>Everything I've worked on...</Heading>
                     <Title className={classes.headline}>Project List</Title>
                 </div>
                 <Table className={classes.list} headers={projects.current.columns}>
-                    {projects.current.rows.map((row, index) => (
-                        row.display?
-                            <Row key={`row-${index}`}>
-                                <Label>{row.completionDate}</Label>
-                                <Label className={classes.openModal} onClick={() => router.push(`?open=${row.directory}`)}>{row.name}</Label>
-                                <Label>{row.madeFor}</Label>
+                    {projects.current.rows.map((row, index) => (row.display &&
+                        <Row key={`row-${index}`}>
+                            <Label>{row.completionDate}</Label>
+                            <Label className={classes.openModal} onClick={() => router.push(`?open=${row.directory}`)}>{row.name}</Label>
+                            <Label>{row.madeFor}</Label>
                                 <div className={classes.technologies}>{row.technologiesUsed.map((tech, index) => <Chip key={tech}>{tech}</Chip>)}</div>
-                                <div className={classes.links}>{Object.entries(row.links).map(([name, link]) => <IconButton key={name} appearance="text" icon={name} iconClass="kalvin-icons" onClick={() => setTimeout(() => window.open(link, "_blank"), 300)} />)}</div>
-                            </Row>
-                            :
-                            ""
+                            <div className={classes.links}>{Object.entries(row.links).map(([name, link]) => <IconButton key={name} appearance="text" icon={name} iconClass="kalvin-icons" onClick={() => setTimeout(() => window.open(link, "_blank"), 300)} />)}</div>
+                        </Row>
                     ))}
                 </Table>
                 <Modal className={classes.modal} elevation="highest" open={open} setOpen={handleModalOpen}>

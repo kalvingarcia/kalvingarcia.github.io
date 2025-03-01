@@ -159,7 +159,7 @@
             "madeFor": "Various",
             "technologiesUsed": ["Python", "PyTorch"],
             "links": {
-                "github": "https://www.github.com/kalvingarcia/ai-collection/"
+                "github": "https://www.github.com/kalvingarcia/ai-collections/"
             },
             "completionDate": "June 2023",
             "display": true

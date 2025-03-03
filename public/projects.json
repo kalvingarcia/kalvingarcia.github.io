@@ -2,131 +2,57 @@
     "columns": ["Date", "Name", "Made For", "Technologies Used", "Links"],
     "rows": [
         {
-            "directory": "arcadia-engine",
-            "name": "Arcadia 2D Game Engine",
-            "madeFor": "Fun",
-            "technologiesUsed": ["C#", "OpenGL"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/arcadia-engine/"
-            },
-            "completionDate": "",
-            "display": false
-        },
-        {
-            "directory": "project-magia",
-            "name": "Project Magia",
-            "madeFor": "Fun",
-            "technologiesUsed": ["Python", "PyTorch"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/project-magia/",
-                "deployment": "https://project-magia.kalvin.live/"
-            },
-            "completionDate": "",
-            "display": false
-        },
-        {
-            "directory": "database-visualizer",
-            "name": "Database Dashboard App",
-            "madeFor": "Fun",
-            "technologiesUsed": ["TypeScript", "React Native", "C++", "PostgresQL"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/arcadia-engine/",
-                "docs": "https://projects.kalvingarcia.com/database-visualizer/"
-            },
-            "completionDate": "",
-            "display": false
-        },
-        {
             "directory": "kalvin-food-blog",
             "name": "Personal Food Blog",
             "madeFor": "",
-            "technologiesUsed": ["TypeScript", "Next.js", "React.js", "TSS"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/kalvin-food-blog/",
-                "deployment": "https://food.kalvingarcia.com/"
-            },
+            "technologiesUsed": ["TypeScript", "Next.js", "React.js", "TSS", "MongoDB"],
+            "links": ["github", "deployment"],
             "completionDate": "October 2024",
             "display": false
         },
         {
-            "directory": "arroz",
-            "name": "Arroz React Components",
+            "directory": "arroz-con-webo",
+            "name": "Arroz con Webo",
             "madeFor": "",
-            "technologiesUsed": ["TypeScript", "React.js", "React Native", "TSS"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/arroz/",
-                "docs": "https://projects.kalvingarcia.com/arroz"
-            },
+            "technologiesUsed": ["TypeScript", "React.js", "TSS"],
+            "links": ["github", "deployment"],
             "completionDate": "September 2024",
             "display": false
         },
         {
-            "directory": "camera-product-page",
-            "name": "Product Page Proof of Concept",
-            "madeFor": "Coalition Interview",
-            "technologiesUsed": ["HTML", "JavaScript", "CSS"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/camera-product-page/"
-            },
-            "completionDate": "September 2024",
-            "display": false
-        },
-        {
-            "directory": "urbarch-dashboard-v2",
-            "name": "Urban Archaeology Dashboard v2",
+            "directory": "urban-archaeology-website",
+            "name": "Urban Archaeology Website",
             "madeFor": "Urban Archaeology",
-            "technologiesUsed": ["JavaScript", "React Native", "PostgresQL"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/urbarch-dashboard-v2/"
-            },
-            "completionDate": "August 2024",
-            "display": false
+            "technologiesUsed": ["JavaScript", "Next.js", "React.js", "TSS", "PostgresQL"],
+            "links": ["github", "deployment"],
+            "completionDate": "April 2025",
+            "display": true
+        },
+        {
+            "directory": "urban-archaeology-dashboard",
+            "name": "Urban Archaeology Dashboard",
+            "madeFor": "Urban Archaeology",
+            "technologiesUsed": ["JavaScript", "React.js", "Electron", "CSS-in-JS", "PostgresQL"],
+            "links": ["github"],
+            "completionDate": "April 2025",
+            "display": true
+        },
+        {
+            "directory": "study-cards",
+            "name": "Spanish Study Cards",
+            "madeFor": "",
+            "technologiesUsed": ["JavaScript", "Webpack", "React.js", "TSS"],
+            "links": ["github", "deployment"],
+            "completionDate": "February 2025",
+            "display": true
         },
         {
             "directory": "kalvin-portfolio",
             "name": "Personal Website",
             "madeFor": "",
             "technologiesUsed": ["JavaScript", "Next.js", "React.js", "TSS"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/kalvin-portfolio/",
-                "deployment": "https://www.kalvingarcia.com/"
-            },
+            "links": ["github"],
             "completionDate": "July 2024",
-            "display": true
-        },
-        {
-            "directory": "urbarch-website",
-            "name": "Urban Archaeology Website",
-            "madeFor": "Urban Archaeology",
-            "technologiesUsed": ["JavaScript", "Next.js", "React.js", "SCSS", "PostgresQL"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/urbarch-website/",
-                "deployment": "https://urbarch-website.kalvin.live/"
-            },
-            "completionDate": "July 2024",
-            "display": true
-        },
-        {
-            "directory": "urbarch-dashboard-v1",
-            "name": "Urban Archaeology Dashboard v1",
-            "madeFor": "Urban Archaeology",
-            "technologiesUsed": ["Python", "Kivy", "KivyMD", "PostgresQL"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/urbarch-dashboard-v1/"
-            },
-            "completionDate": "June 2024",
-            "display": true
-        },
-        {
-            "directory": "catalog-demo",
-            "name": "Catalog Demonstration",
-            "madeFor": "Urban Archaeology",
-            "technologiesUsed": ["HTML", "CSS", "JavaScript"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/catalog-demo/",
-                "deployment": "https://projects.kalvingarcia.com/catalog-demo/"
-            },
-            "completionDate": "December 2023",
             "display": true
         },
         {
@@ -134,22 +60,7 @@
             "name": "Los Angeles Mountains Website",
             "madeFor": "Coalition Interview",
             "technologiesUsed": ["HTML", "JavaScript", "CSS"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/mountains-website/",
-                "deployment": "https://projects.kalvingarcia.com/mountains-website/"
-            },
-            "completionDate": "August 2023",
-            "display": true
-        },
-        {
-            "directory": "toy-food-blog",
-            "name": "Faux Food Blog Homepage",
-            "madeFor": "",
-            "technologiesUsed": ["JavaScript", "React.js", "Python", "Django", "CSS"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/toy-food-blog/",
-                "deployment": "https://projects.kalvingarcia.com/toy-food-blog/"
-            },
+            "links": ["github", "deployment"],
             "completionDate": "August 2023",
             "display": true
         },
@@ -158,9 +69,7 @@
             "name": "AI Project Menagerie",
             "madeFor": "Various",
             "technologiesUsed": ["Python", "PyTorch"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/ai-collections/"
-            },
+            "links": ["github"],
             "completionDate": "June 2023",
             "display": true
         },
@@ -169,9 +78,7 @@
             "name": "Physarum Slime Mold Simulation",
             "madeFor": "Fun",
             "technologiesUsed": ["C++"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/slime-mold-sim/"
-            },
+            "links": ["github"],
             "completionDate": "November 2022",
             "display": true
         },
@@ -180,9 +87,7 @@
             "name": "Meet Me Halfway",
             "madeFor": "Academic",
             "technologiesUsed": ["Python", "Kivy", "KivyMD"],
-            "links": {
-                "github": "https://github.com/WesleyGlover/TeamRocket"
-            },
+            "links": ["github"],
             "completionDate": "May 2022",
             "display": true
         },
@@ -191,10 +96,7 @@
             "name": "Image Processing Webapp",
             "madeFor": "Academic",
             "technologiesUsed": ["HTML", "CSS", "JavaScript"],
-            "links": {
-                "github": "https://www.github.com/kalvingarcia/image-processor/",
-                "deployment": "https://projects.kalvingarcia.com/image-processor/"
-            },
+            "links": ["github", "deployment"],
             "completionDate": "December 2021",
             "display": true
         },
@@ -203,20 +105,16 @@
             "name": "Toy AES Implementation",
             "madeFor": "Academic",
             "technologiesUsed": ["C++"],
-            "links": {
-                "github": "https://github.com/kalvingarcia/toy-AES/"
-            },
+            "links": ["github"],
             "completionDate": "November 2021",
             "display": true
         },
         {
             "directory": "micro-R-parser",
-            "name": "Toy Parser Implementation",
+            "name": "Toy R Parser Implementation",
             "madeFor": "Academic",
             "technologiesUsed": ["Java", "JFlex", "CUP"],
-            "links": {
-                "github": "https://github.com/kalvingarcia/mirco-R-parser/"
-            },
+            "links": ["github"],
             "completionDate": "October 2021",
             "display": true
         }

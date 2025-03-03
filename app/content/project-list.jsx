@@ -92,7 +92,7 @@ export default function ProjectList({show}) {
     const [open, setOpen] = useState(false);
     const [markdown, setMarkdown] = useState("");
     const openModal = useCallback(async directory => {
-        setMarkdown(await fetch(`./projects/${directory}.md`).then(response => response.text()));
+        setMarkdown(await fetch(`https://raw.githubusercontent.com/kalvingarcia/${directory}/refs/heads/main/README.md`).then(response => response.text()));
         setOpen(true);
     }, []);
 
@@ -123,6 +123,11 @@ export default function ProjectList({show}) {
         })();
     }, []);
 
+    const generateLink = (link, directory) => {
+        if(link === "github") return `https://www.github.com/kalvingarcia/${directory}`;
+        else if(link === "deployment") return `https://${directory}.kalvin.live`
+    }
+
     const {isIntersecting, setElement} = useIntersection();
     const {classes} = useStyles();
     return (isClient &&
@@ -139,7 +144,7 @@ export default function ProjectList({show}) {
                             <Label className={classes.openModal} onClick={() => router.push(`?open=${row.directory}`)}>{row.name}</Label>
                             <Label>{row.madeFor}</Label>
                             <div className={classes.technologies}>{row.technologiesUsed.map(tech => <Chip key={tech} active={highlightedTech.includes(tech)} onClick={() => toggleTech(tech)}>{tech}</Chip>)}</div>
-                            <div className={classes.links}>{Object.entries(row.links).map(([name, link]) => <IconButton key={name} appearance="text" icon={name} iconClass="kalvin-icons" onClick={() => setTimeout(() => window.open(link, "_blank"), 300)} />)}</div>
+                            <div className={classes.links}>{row.links.map(link => <IconButton key={link} appearance="text" icon={link} iconClass="kalvin-icons" onClick={() => setTimeout(() => window.open(generateLink(link, row.directory), "_blank"), 300)} />)}</div>
                         </Row>
                     ))}
                 </Table>
